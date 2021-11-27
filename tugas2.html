@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="prasti">
+      <h1>Get a FizzBuzz Result!</h1>
+      <form onsubmit="return false">
+        Type a number: <input type="number" id="angka" />
+        <button onclick="tombol2()">Click Here!</button>
+        <hr />
+      </form>
+    </div>
+
+    <script>
+      function tombol2() {
+        let inputan = document.getElementById('angka').value;
+
+        let divPrasti = document.getElementById('prasti');
+
+        let hasil = document.createElement('p');
+        divPrasti.append(hasil);
+
+        if (inputan == '' || inputan == 0) {
+          hasil.innerHTML = 'Invalid Input';
+        } else if (inputan % 3 == 0 && inputan % 5 == 0) {
+          hasil.innerHTML = 'FizzBuzz!';
+        } else if (inputan % 3 == 0) {
+          hasil.innerHTML = 'Fizz!';
+        } else if (inputan % 5 == 0) {
+          hasil.innerHTML = 'Buzz';
+        } else {
+          hasil.innerHTML = inputan;
+        }
+      }
+    </script>
+  </body>
+</html>
